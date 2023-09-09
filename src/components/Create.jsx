@@ -30,7 +30,6 @@ const Create = () => {
   }
   useEffect(() => {
     const token = localStorage.getItem("token");
-    console.log(token)
     if (!token) {
       navigate("/login");
     }
@@ -53,7 +52,6 @@ const Create = () => {
       const res = await axios.post(`${BACKEND_API}/todo`, snippet, {
         headers: { Authorization: `Bearer ${token}` },
       });
-      console.log('Status=',res.data)
       if (res) {
         window.alert("Snippet Created Successfully.");
         navigate("/view");

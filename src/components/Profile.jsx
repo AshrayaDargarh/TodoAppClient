@@ -32,7 +32,6 @@ const Profile = () => {
     } catch (error) {
       logout()
       navigate('/unauthorized')
-      console.log(error.response);
     }
   }
   async function handleSubmit(e)
@@ -44,13 +43,11 @@ const Profile = () => {
       {
         delete user.password
       }
-      console.log('After removing password',user)
       const res=await axios.patch(`${BACKEND_API}/user/${user._id}`,user,{headers:{Authorization:`Bearer ${token}`}})
       if(res.data)
       {
         toast.success('Profile updated successfully');
       }
-      console.log(res)
     }catch(error)
     {
       console.log(error.response)

@@ -20,12 +20,9 @@ const TodoUpdate = () => {
   
   async function getSnippet(token) {
     try {
-      console.log('Token=',token)
-      console.log("Id is=",id)
       const res = await axios.get(`${BACKEND_API}/todo/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
-      console.log("Got the snippets=",res.data)
 
       if(res.data)
       {
@@ -80,7 +77,6 @@ const TodoUpdate = () => {
         snippet,
         { headers: { Authorization: `Bearer ${token}` } }
       );
-      console.log('Patch res',res.data)
       if(res.data)
       {
         toast.success('Snippet updated successfully.');
@@ -98,7 +94,6 @@ const TodoUpdate = () => {
         const res = await axios.delete(`${BACKEND_API}/todo/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
-        console.log(res);
         navigate("/view");
       }
     } catch (error) {

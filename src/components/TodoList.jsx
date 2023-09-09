@@ -45,13 +45,12 @@ async function getFromDB(category)
   try {
         const token = localStorage.getItem('token')
         const res =await axios.get(`${BACKEND_API}/todo/taskStatus/${category}`, { headers: { 'Authorization': `Bearer ${token}` } })
-            console.log(res)
+          
             setLoading(false)
               setCurrentList(res.data)
               setNotFound(false)
             if(res.data.length===0)
             {
-              console.log(category,'NOt found')
               setNotFound(true)
             }
             
@@ -70,7 +69,6 @@ async function getAllTodos()
         setLoading(false)
         setAllTodos(res.data)          
         setNotFound(false)
-        console.log('Neth',res.data.length)
         if(res.data.length===0)
         {
           setNotFound(true)
@@ -80,7 +78,6 @@ async function getAllTodos()
         setLoading(false)
 
              navigate('/unauthorized')
-            console.log(error.response)
         }
     }
 useEffect(()=>{
