@@ -83,15 +83,20 @@ const Profile = () => {
         <div className="flex flex-col mb-4">
           <label htmlFor="userName" className="mb-2 text-gray-200 font-medium">Username</label>
           <input type="text" id="userName" name="userName" value={user.userName} onChange={handleChange}
+          required
            className="p-2 bg-[#1d1b1b] rounded-md  border-[#64B5F6]  focus:border-none  focus:ring-[#64B5F6] focus:ring-offset-[#64B5F6] focus:ring-offset-1"/>
         </div>
         <div className="flex flex-col mb-4">
           <label htmlFor="firstName" className="mb-2 text-gray-200 font-medium">First Name</label>
-          <input type="text" id="firstName" name="firstName" value={user.firstName} onChange={handleChange} className="p-2 bg-[#1d1b1b] rounded-md  border-[#64B5F6]  focus:border-none  focus:ring-[#64B5F6] focus:ring-offset-[#64B5F6] focus:ring-offset-1"/>
+          <input type="text" id="firstName" name="firstName" value={user.firstName} onChange={handleChange}
+          required
+          className="p-2 bg-[#1d1b1b] rounded-md  border-[#64B5F6]  focus:border-none  focus:ring-[#64B5F6] focus:ring-offset-[#64B5F6] focus:ring-offset-1"/>
         </div>
         <div className="flex flex-col mb-4">
           <label htmlFor="lastName" className="mb-2 text-gray-200 font-medium">Last Name</label>
-          <input type="text" id="lastName" name="lastName" value={user.lastName} onChange={handleChange} className="p-2 bg-[#1d1b1b] rounded-md  border-[#64B5F6]  focus:border-none  focus:ring-[#64B5F6] focus:ring-offset-[#64B5F6] focus:ring-offset-1"/>
+          <input type="text" id="lastName" name="lastName" value={user.lastName} onChange={handleChange}
+          required
+          className="p-2 bg-[#1d1b1b] rounded-md  border-[#64B5F6]  focus:border-none  focus:ring-[#64B5F6] focus:ring-offset-[#64B5F6] focus:ring-offset-1"/>
         </div>
         <div className="flex flex-col mb-4">
           <label htmlFor="email" className="mb-2 text-gray-200 font-medium">Email</label>
